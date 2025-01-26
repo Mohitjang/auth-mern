@@ -1,0 +1,38 @@
+1. project setup. (installed some dependencies, nodemon setup and server starting on port 3000)
+
+2. Mongodb atlas setup
+
+   1. create account on mongodb atlas
+   2. create cluster
+   3. put connection string with password in the .env file
+   4. allow network access from anywhere
+
+3. create db connection
+
+   1. create db/connectDB.js
+   2. connect to db using mongoose client
+   3. keep in mind to import dotenv package
+
+4. create auth routes
+
+   1. auth routes file inside routes folder
+   2. create several routed for signup and login apis
+
+5. create auth.controller.js file
+
+   1. create api for handling signup and login features
+      // DATED: 19 january 2025
+   2. create signup, login and logout controller actions.
+   3. call these controller actions in routes file.
+
+6. create models folder
+
+   1. create user model file.
+   2. import mongoose
+   3. create userSchema using mongoose
+   4. create User Model using mongoose
+
+7. signup controller implementation.
+   1. get data filled by the user on browser in the form of request body
+   2. add middleware to allow us to parse incoming requests with json payloads.
+      // Dated: 19 january "auth.cotroller.js"
