@@ -2,6 +2,7 @@ import { User } from "../models/user.model.js";
 import bcrypt from "bcryptjs";
 import { generateVerificationToken } from "../utils/generateVerificationToken.js";
 import { generateTokenAndSetCookie } from "../utils/generateTokenAndSetCookie.js";
+import { sendVerificationEmail } from "../mailtrap/email.js";
 
 export const signup = async (req, res) => {
   // console.log(req.body)
@@ -29,10 +30,14 @@ export const signup = async (req, res) => {
       verificationTokenExpiresAt: Date.now() + 24 * 60 * 60 * 1000,
     });
 
+    // saving user in the database
     await user.save();
 
     // jwt token
     const token = generateTokenAndSetCookie(res, user._id);
+
+    // send verification email
+    await sendVerificationEmail(user.email, verificationToken);
 
     res.status(201).json({
       success: true,
