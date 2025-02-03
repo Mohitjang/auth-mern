@@ -33,12 +33,26 @@
    4. create User Model using mongoose
 
 7. signup controller implementation.
+
    1. get data filled by the user on browser in the form of request body
    2. add middleware to allow us to parse incoming requests with json payloads.
-   3. set jwt token in the cookies 
+   3. set jwt token in the cookies
    4. send verification email using mailtrap client.
 
 8. verify email api implementation.
-    1. create route
-    2. create controller method
-    
+
+   1. create route
+   2. create controller method verify email
+   3. send welcome email
+
+9. logout api implementation
+   1. clear the token cookie from user's browser
+
+10. Login api
+   1. check for credential are valid
+   2. generate jwt token
+   3. set token in the cookies
+   4. redirect to the home page
+
+11. Forget password api
+   1. 

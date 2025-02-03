@@ -58,7 +58,7 @@ export const signup = async (req, res) => {
 export const verifyEmail = async (req, res) => {
   //  1 2 3 4 5 6
   const { code } = req.body;
-  console.log(code)
+  console.log(code);
 
   try {
     const user = await User.findOne({
@@ -92,8 +92,52 @@ export const verifyEmail = async (req, res) => {
 };
 
 export const login = async (req, res) => {
-  res.send("login controller");
+  const { email, password } = req.body;
+
+  try {
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      res.status(400).json({
+        success: false,
+        message: "user doesn't exists",
+      });
+      return;
+    }
+    const isPasswordValid = await bcrypt.compare(password, user.password);
+
+    if (!isPasswordValid) {
+      res.status(400).json({
+        success: false,
+        message: "Invalid credentials!",
+      });
+      return;
+    }
+
+    generateTokenAndSetCookie(res, user._id);
+    user.lastLogin = new Date();
+    await user.save();
+
+    res.status(200).json({
+      success: true,
+      message: "user logged in successfully!",
+      user: {
+        ...user._doc,
+        password: undefined,
+      },
+    });
+  } catch (error) {
+    console.log("Error in login:", error);
+    res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
 };
 export const logout = async (req, res) => {
-  res.send("logout controller");
+  res.clearCookie("token");
+  res.status(200).json({
+    success: true,
+    message: "Logged out successfully!",
+  });
 };
