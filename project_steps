@@ -35,4 +35,10 @@
 7. signup controller implementation.
    1. get data filled by the user on browser in the form of request body
    2. add middleware to allow us to parse incoming requests with json payloads.
-      // Dated: 19 january "auth.cotroller.js"
+   3. set jwt token in the cookies 
+   4. send verification email using mailtrap client.
+
+8. verify email api implementation.
+    1. create route
+    2. create controller method
+    
