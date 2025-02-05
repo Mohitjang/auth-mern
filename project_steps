@@ -55,4 +55,10 @@
    4. redirect to the home page
 
 11. Forget password api
-   1. 
+   1. create forgot password api
+   2. send email to user with reset password url, by attaching reset password token ( used crypto to create token )
+   3. create reset password api
+   4. check if reset password token is valid then update user's passoword
+   5. send password reset successful email to user.
+
+12. Check Auth api
