@@ -62,3 +62,11 @@
    5. send password reset successful email to user.
 
 12. Check Auth api
+   1. created route and added verifyToken middleware function
+   2. in verifyToken : 
+      [-] decoded the jwt token with the help of jwt.verify. [app.use(cookieParser())]
+      [-] compared the decoded.userId and req.userId
+      [-] after that we called the next()
+   3. in checkAuth : 
+      [-] fetched the userData using req.userId 
+      [-] send the response 
