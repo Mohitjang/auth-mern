@@ -1,0 +1,11 @@
+1. Front end setup
+   1. create vite app
+   2. add tailwind css
+
+2. create FloatingShape component
+   1. to use animation install framer-motion
+   2. used motion.div to add animation on the background
+      commit : Frontend setup
+
+3. Signup Page
+
