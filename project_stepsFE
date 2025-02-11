@@ -9,12 +9,12 @@
 
 3. Add Routes for the diffrent page
 
-4. Signup page 
+4. Signup & Login Page
    1. create div using motion.div
    2. add heading
    3. add form to take user input
    4. CREATE INPUT component so we can reuse it.
    5. create password strength meter component for password
 
-
+5. Verify email page
 
