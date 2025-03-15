@@ -17,4 +17,14 @@
    5. create password strength meter component for password
 
 5. Verify email page
+   1. created a component with 6 input feild to take user input
+   2. wrote logic for:- 
+      user writes code one by one
+      user presses backspaces
+      user pastes 6 digit code
+      user pastes less then 6 then focus moves to
+      submit form effect after all feilds are filled
+   
+6. Signup Implementation
+
 
