@@ -30,7 +30,13 @@
    2. created store for statemanagement where user state and signup and other fucntion will be gloaballu available
    3. handle CORS = npm install CORS
    4. add inside index.js => app.use(cors({ origin: "http://localhost:5173", credentials: true }));
-   5. to attach cookies with every FE request => axios.defaults.withCredentials = true;
+   5. to attach cookies with every FE request => axios.defaults.withCredentials = true; 
 
 
+7. Verify Email Implementation
+   1. npm i react-hot-toast => to add toasted for successfull verication of email
+   2. added toaster in App.jsx
+   3. added verify email function in zustand store
+   4. done!
 
+8. Check Auth Implementation

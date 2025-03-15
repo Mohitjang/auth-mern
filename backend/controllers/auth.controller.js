@@ -93,6 +93,7 @@ export const verifyEmail = async (req, res) => {
         success: false,
         message: "Invalid or expired verification code",
       });
+      return;
     }
     user.isVerified = true;
     user.verificationToken = undefined;
