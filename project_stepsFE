@@ -26,5 +26,11 @@
       submit form effect after all feilds are filled
    
 6. Signup Implementation
+   1. npm install zustand, axios
+   2. created store for statemanagement where user state and signup and other fucntion will be gloaballu available
+   3. handle CORS = npm install CORS
+   4. add inside index.js => app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+   5. to attach cookies with every FE request => axios.defaults.withCredentials = true;
+
 
 
