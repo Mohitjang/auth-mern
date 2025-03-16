@@ -1,6 +1,7 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 import FloatingShape from "./components/FloatingShape";
+import LoadingSpinner from "./components/LoadingSpinner";
 import SignUpPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import EmailVerificationPage from "./pages/EmailVerificationPage";
@@ -39,8 +40,9 @@ function App() {
     checkAuth();
   }, [checkAuth]);
 
-  console.log("isAuthenticated", isAuthenticated);
-  console.log("user", user);
+  // console.log("isAuthenticated", isAuthenticated);
+  // console.log("user", user);
+  if (isCheckingAuth) return <LoadingSpinner />;
 
   return (
     <div
