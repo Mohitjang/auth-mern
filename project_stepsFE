@@ -46,3 +46,15 @@
    4. done!
 
 9. Login Implementation
+   1. added login function in authstore
+   2. added spinning loader
+   3. done!
+
+10. Dashboard page and Logout Implementation
+   1. added Logout fucntion in authstore
+   2. added user info on dahsboard page
+   3. added logut button 
+   4. done!
+
+11. Forgot Password Implementation
+   1. added route in App.jsx
