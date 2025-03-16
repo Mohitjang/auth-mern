@@ -40,3 +40,9 @@
    4. done!
 
 8. Check Auth Implementation
+   1. added check Auth function in authstore
+   2. added protected route on home page
+   3. added redireted routes on login page if user is logged in to redirect him onto home page
+   4. done!
+
+9. Login Implementation
