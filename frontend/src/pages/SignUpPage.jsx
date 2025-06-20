@@ -5,6 +5,7 @@ import { User, Mail, Lock, Loader } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import PasswordStrengthMeter from "../components/PasswordStrengthMeter";
 import { useAuthStore } from "../store/authStore";
+import toast from "react-hot-toast";
 
 const SignUpPage = () => {
   const [name, setName] = useState("");
@@ -21,7 +22,15 @@ const SignUpPage = () => {
       await signup(email, password, name);
       navigate("/verify-email");
     } catch (error) {
-      console.log(error);
+      const message = error.response?.data?.message || error.message;
+      console.log("Signup failed:", message);
+
+      // Show toast based on error
+      if (message === "User already exists") {
+        toast.error("User already exists. Please log in or use a different email.");
+      } else {
+        toast.error("Signup failed. Please try again.");
+      }
     }
   };
   return (
