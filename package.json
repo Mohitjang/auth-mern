@@ -21,10 +21,10 @@
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
     "mailtrap": "^3.4.0",
+    "cross-env": "^7.0.3",
     "mongoose": "^8.9.4"
   },
   "devDependencies": {
-    "cross-env": "^7.0.3",
     "nodemon": "^3.1.9"
   }
 }
