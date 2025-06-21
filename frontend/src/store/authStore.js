@@ -6,7 +6,8 @@ import axios from "axios";
 // this fucntion take the setter as an argument
 // and return the state and the setter
 
-const API_URL = "http://localhost:5000/api/auth";
+const API_URL = import.meta.env.MODE === "development" ? "http://localhost:5000/api/auth" : "/api/auth";
+
 
 axios.defaults.withCredentials = true; // to send cookies to the server
 
